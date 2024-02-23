@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #dc3232;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.background-image {
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px);
+    filter: brightness(40%%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+   
+}
+
+#searchInput {
+    padding: 8px;
+    margin: 0 10px;
+    width: 200px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #6c6c6c;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.navigationInfo {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.navigationInfo h2 {
+    margin-bottom: 10px;
+}
+
+.navigationInfo ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navigationInfo ul li {
+    margin-bottom: 10px;
+}
+
+.navigationInfo ul li ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.navigationInfo ul li ul li {
+    margin-bottom: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    color: #fff;
+}
+
+table, th, td {
+    border: 1px solid rgb(255, 255, 255);
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    color: #fff;
+    background-color: #928e8e;
+}
+
+th {
+    background-color: #da4848;
+    color: #fff;
+}

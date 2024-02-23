@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validateForm(){
+            var usrnm = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+            var passwordptrn = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+
+            if (usrnm == null || usrnm === ""){
+                alert("Username field is required");
+                return false;
+            }
+            if (pass == null || pass === ""){
+                alert("Password field can't be blank");
+                return false;
+            }
+            if (!passwordptrn.test(pass)) {
+                alert("Enter a valid password. Password must be 8-15 characters long, contain at least one uppercase letter, one lowercase letter, one digit, and one special character.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form action="login.php" method="post" onsubmit="return validateForm()">
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <div class="description">
+                    <p>This website is for helping students with navigation and teachers seating arrangement.</p>
+                </div>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

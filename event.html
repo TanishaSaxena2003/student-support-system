@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventApp">
+<head>
+    <title>Events</title>
+    <link rel="stylesheet" href="event.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <nav>
+        <img src="nmimslogo.jpg" width="200px" height="55px" align="left">
+        <ul>
+            <li><input type="text" ng-model="searchText" placeholder="Search..."></li>
+            <li><a href="index.html"><b>HOME</b></a></li>
+            <li id="border"><a href="teacher.html"><b>TEACHER INFORMATION</b></a></li>
+            <li><a href="navigation2.html"><b>NAVIGATION</b></a></li>
+            <li><a href="helpline.html"><b>HELPLINE</b></a></li>
+            <li><a href="timings.html"><b>TIMINGS</b></a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Events</h1>
+    </header>
+
+    <main ng-controller="EventController">
+        <div class="background-image"></div>
+
+        <!-- Search Bar -->
+        
+        <!-- Event List -->
+        <div class="event-list">
+            <div class="event" ng-repeat="event in events | filter: searchText">
+                <img ng-src="{{ event.image }}" alt="{{ event.title }}">
+                <div class="event-details">
+                    <h2>{{ event.title }}</h2>
+                    <p>{{ event.description }}</p>
+                    <p><strong>Date:</strong> {{ event.date }}</p>
+                    <p><strong>Time:</strong> {{ event.time }}</p>
+                    <p><strong>Venue:</strong> {{ event.venue }}</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        angular.module('eventApp', [])
+            .controller('EventController', function($scope) {
+                // Event Data
+                $scope.events = [
+                    { title: 'Seminar on Robotics', description: 'Learn about the latest advancements in robotics technology.', date: 'March 25, 2024', time: '10:00 AM - 12:00 PM', venue: 'Auditorium', image: 'robotics.jpeg' },
+                    { title: 'Coding Competition', description: 'Compete with your peers in a coding challenge.', date: 'April 5, 2024', time: '2:00 PM - 5:00 PM', venue: 'Computer Lab', image: 'coding.jpg' },
+                    // Add more events as needed
+                ];
+            });
+    </script>
+</body>
+</html>

@@ -24,7 +24,7 @@ main {
     background-size: cover;
     background-position: center;
     filter: blur(3px);
-    filter: brightness(40%%);
+    filter: brightness(40%);
     position: fixed;
     top: 0;
     left: 0;
@@ -59,6 +59,8 @@ main {
     width: 100%;
     height: 100%;
     display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease;    
 }
 
 .grid-item span {

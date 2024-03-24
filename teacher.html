@@ -1,43 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="teacherApp">
 <head>
     <title>Teacher Information</title>
     <link rel="stylesheet" href="teacher.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
 <body>
     <nav>
         <img src="nmimslogo.jpg" width="200px" height="55px" align="left">
         <ul>
-            <li><a href="homepage.html"><b>HOME</b></a></li>
+            <li><input type="text" ng-model="searchText" placeholder="Search..."></li>
+            <li><a href="index.html"><b>HOME</b></a></li>
             <li id="border"><a href="teacher.html"><b>TEACHER INFORMATION</b></a></li>
             <li><a href="navigation2.html"><b>NAVIGATION</b></a></li>
             <li><a href="helpline.html"><b>HELPLINE</b></a></li>
             <li><a href="timings.html"><b>TIMINGS</b></a></li>
-           
         </ul>
     </nav>
     <header>
         <h1>Teacher Information</h1>
     </header>
 
-    <main>
+    <main ng-controller="TeacherController">
         <div class="background-image"></div>
 
-        <div class="grid-container">
-            <a href="mayankSir.html" class="grid-item">
-                <img src="MayankSohaniSir.jpg" alt="MayankSohaniSir">
-                <span>Dr. Mayank Sohani</span>
-            </a>
+        <!-- Search Bar -->
+        
 
-            <a href="rambolasir.html" class="grid-item">
-                <img src="RambolaSir.jpg" alt="RambolaSir">
-                <span>Dr. Radha Krishna Rambola</span>
-            </a>
-            <a href="nitinchoubey.html" class="grid-item">
-                <img src="nitin-choubey-1.jpg" alt="NitinChoubeySir">
-                <span>Dr. Nitin S. Choubey</span>
+        <div class="grid-container">
+            <!-- Filtered Teacher Entries -->
+            <a ng-repeat="teacher in teachers | filter: searchText" ng-href="{{ teacher.link }}" class="grid-item">
+                <img ng-src="{{ teacher.image }}" alt="{{ teacher.name }}">
+                <span>{{ teacher.name }}</span>
             </a>
         </div>
     </main>
+
+    <script>
+        angular.module('teacherApp', [])
+            .controller('TeacherController', function($scope) {
+                // Teacher Data
+                $scope.teachers = [
+                    { name: 'Dr. Mayank Sohani', image: 'MayankSohaniSir.jpg', link: 'mayankSir.html' },
+                    { name: 'Dr. Radha Krishna Rambola', image: 'RambolaSir.jpg', link: 'rambolasir.html' },
+                    { name: 'Dr. Nitin S. Choubey', image: 'nitin-choubey-1.jpg', link: 'nitinchoubey.html' }
+                    // Add more teachers as needed
+                ];
+            });
+    </script>
 </body>
 </html>

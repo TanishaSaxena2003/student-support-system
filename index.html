@@ -3,22 +3,63 @@
 <head>
     <title>Home Page</title>
     <link rel="stylesheet" href="homestyle.css">
+    <style>
+        
+        .grid-item {
+            display: inline-block;
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            border: 2px solid white; 
+        }
+
+
+        .grid-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease; 
+        }
+
+        .grid-item:hover img {
+            transform: scale(1.1); 
+        }
+
+        .grid-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            line-height: 150px; 
+            opacity: 0; 
+            transition: opacity 0.3s ease; 
+        }
+
+        .grid-item:hover .overlay {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
     <nav>
-        <img src="nmimslogo.jpg" width="200px" height="55px" align="left">
+        <img src="nmimslogo.jpg" width="200px" height="60px" align="left">
         <ul>
-            <li><a href="homepage.html"><b>HOME</b></a></li>
+            <li><a href="index.html"><b>HOME</b></a></li>
             <li id="border"><a href="teacher.html"><b>TEACHER INFORMATION</b></a></li>
             <li><a href="navigation2.html"><b>NAVIGATION</b></a></li>
             <li><a href="helpline.html"><b>HELPLINE</b></a></li>
             <li><a href="timings.html"><b>TIMINGS</b></a></li>
-           
         </ul>
     </nav>
     <header>
-        <h1 style="font-family: serif; font-size: 40px;">Student Support System </h1>
-        
+        <h1 style="font-family: serif; font-size: 30px;">Student Support System </h1>
     </header>
 
     <main>
@@ -26,31 +67,32 @@
 
         <div class="grid-container">
             <a href="teacher.html" class="grid-item">
-                <img src="teacher.jpg" alt="Teacher">
-                <span>Teacher Information</span>
+                <img src="teacher1.png" alt="Teacher">
+                
             </a>
-            <a href="navigation.html" class="grid-item">
-                <img src="Navigation.jpg" alt="Navigation">
-                <span>Navigation</span>
+            <a href="navigation2.html" class="grid-item">
+                <img src="Navigation1.png" alt="Navigation">
             </a>
             <a href="helpline.html" class="grid-item">
-                <img src="helpline.jpg" alt="Helpline">
-                <span>Helpline</span>
+                <img src="helpline1.png" alt="Helpline">
             </a>
             <a href="timings.html" class="grid-item">
-                <img src="timings.jpg" alt="Timings">
-                <span>Timings</span>
+                <img src="timings1.png" alt="Timings">
             </a>
             <a href="contactUs.html" class="grid-item">
-                <img src="ContactUs.jpg" alt="Contact">
-                <span>Contact US</span>
+                <img src="ContactUs1.png" alt="Contact">
             </a>
             <a href="mentorMentee.html" class="grid-item">
-                <img src="MentorMentee.jpg" alt="MentorMentee">
-                <span>Mentor Mentees</span>
+                <img src="MentorMentee1.png" alt="MentorMentee">
+            </a>
+            <a href="event.html" class="grid-item"> 
+                <img src="event1.png" alt="Event">
+   
+            </a>
+            <a href="https://portal.svkm.ac.in/usermgmt/login" class="grid-item">
+                <img src="studentportal1.png" alt="MentorMentee">
             </a>
         </div>
-        
     </main>
 </body>
 </html>

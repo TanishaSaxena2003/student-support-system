@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event Registration</title>
+    <link rel="stylesheet" href="eventreg.css">
+</head>
+<body>
+    <nav>
+        <img src="nmimslogo.jpg" width="200px" height="60px" align="left">
+        <ul>
+            <li><a href="index.html"><b>HOME</b></a></li>
+            <li id="border"><a href="teacher.html"><b>TEACHER INFORMATION</b></a></li>
+            <li><a href="navigation2.html"><b>NAVIGATION</b></a></li>
+            <li><a href="helpline.html"><b>HELPLINE</b></a></li>
+            <li><a href="timings.html"><b>TIMINGS</b></a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1 style="font-family: serif; font-size: 30px;"> Event Registration </h1>
+    </header>
+    <div class="container">
+        
+        <form id="eventRegistrationForm" action="submit.php" method="post">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="sapId">SAP ID:</label>
+            <input type="text" id="sapId" name="sapId" required>
+
+            <label for="year">Year:</label>
+            <select id="year" name="year" required>
+                <option value="">Select Year</option>
+                <option value="1st">1st</option>
+                <option value="2nd">2nd</option>
+                <option value="3rd">3rd</option>
+                <option value="4th">4th</option>
+            </select>
+
+            <label for="branch">Branch:</label>
+            <select id="branch" name="branch" required>
+                <option value="">Select Branch</option>
+                <option value="BTech CS">BTech CS</option>
+                <option value="MBATech CE">MBATech CE</option>
+                <option value="BTech CE">BTech CE</option>
+                <option value="MBATech DS">MBATech DS</option>
+            </select>
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>

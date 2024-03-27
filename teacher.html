@@ -24,11 +24,8 @@
     <main ng-controller="TeacherController">
         <div class="background-image"></div>
 
-        <!-- Search Bar -->
-        
-
         <div class="grid-container">
-            <!-- Filtered Teacher Entries -->
+
             <a ng-repeat="teacher in teachers | filter: searchText" ng-href="{{ teacher.link }}" class="grid-item">
                 <img ng-src="{{ teacher.image }}" alt="{{ teacher.name }}">
                 <span>{{ teacher.name }}</span>
@@ -39,12 +36,12 @@
     <script>
         angular.module('teacherApp', [])
             .controller('TeacherController', function($scope) {
-                // Teacher Data
+                
                 $scope.teachers = [
                     { name: 'Dr. Mayank Sohani', image: 'MayankSohaniSir.jpg', link: 'mayankSir.html' },
                     { name: 'Dr. Radha Krishna Rambola', image: 'RambolaSir.jpg', link: 'rambolasir.html' },
                     { name: 'Dr. Nitin S. Choubey', image: 'nitin-choubey-1.jpg', link: 'nitinchoubey.html' }
-                    // Add more teachers as needed
+                
                 ];
             });
     </script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var errorSpan = document.getElementById("error-message");
+
+            if (username === "209" && password === "12345678") {
+                errorSpan.innerHTML = "Login successful!";
+                window.location = "index.html";
+            } 
+            else if (username === "213" && password === "12345678") {
+                errorSpan.innerHTML = "Login successful!";
+                window.location = "index.html";
+            } 
+            else if (username === "214" && password === "12345678") {
+                errorSpan.innerHTML = "Login successful!";
+                window.location = "index.html";
+            } 
+            else if (password === "" && username === "") {
+                errorSpan.innerHTML = "ENTER CREDENTIALS!";
+            }
+            else if (username === "") {
+                errorSpan.innerHTML = "ENTER USERNAME!";
+            }
+            else if (password === "") {
+                errorSpan.innerHTML = "ENTER PASSWORD!";
+            }
+            else {
+                errorSpan.innerHTML = "Invalid username or password";
+            }
+            return false; 
+        }
+    </script>
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form action="/login" method="post" onsubmit="return login()">
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <div class="description">
+                    <p>This website is for helping students with navigation and teachers seating arrangement.</p>
+                </div>
+            </div>
+            <button type="submit">Login</button>
+            <span id="error-message" style="color: red;"></span>
+        </form>
+    </div>
+</body>
+</html>
